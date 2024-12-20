@@ -1,7 +1,10 @@
+/* Sidebar.css */
 .sidebar {
     flex: 0.2;
     padding: 10px;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #595959;
+    border-top: 1px solid #595959;  
+    background-color: #333333; /* Noir graphite */
   }
   
   .sidebar h2 {

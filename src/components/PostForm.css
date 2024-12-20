@@ -1,28 +1,79 @@
-.postForm {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .postForm textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    resize: none;
-  }
-  
-  .postForm button {
-    margin-top: 10px;
-    background-color: #1da1f2;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .postForm button:hover {
-    background-color: #0d95e8;
-  }
-  
+/* PostForm.css */
+
+/* Formulaire d'ajout d'article */
+.post-form {
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.post-form div {
+  margin-bottom: 15px;
+}
+
+.post-form label {
+  font-weight: 400;
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.post-form input,
+.post-form textarea {
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.post-form input[type="file"] {
+  padding: 5px;
+}
+
+.post-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-form button:hover {
+  background-color: #45a049;
+}
+
+/* Styles d'aperçu de l'image */
+.post-form img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation pour le formulaire */
+.postForm-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.postForm-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 300ms ease-in-out;
+}
+
+.postForm-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.postForm-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 300ms ease-in-out;
+}

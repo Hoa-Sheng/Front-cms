@@ -4,32 +4,19 @@
 .feedi-container {
   background-color: #1C1C1C; /* Fond sombre */
   color: #fff; /* Texte en blanc */
+  padding: 20px;
   font-family: Arial, sans-serif;
-  min-height: 100vh; /* Hauteur minimale de la page (100% de la hauteur de la fenêtre) */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrer horizontalement les articles */
-  justify-content: flex-start; /* Aligner les articles vers le haut */
-  padding: 20px;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* S'assurer que le contenu occupe toute la hauteur de la fenêtre */
 }
 
-/* Garder le fond qui couvre toute la page, même lors du scroll */
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #1C1C1C; /* Couleur de fond continuelle */
-  min-height: 100vh; /* La page occupe toute la hauteur même avec scroll */
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-/* Titre */
 h1 {
   color: #fff;
   font-size: 2rem;
   margin-bottom: 20px;
-  text-align: center; /* Centrer le titre */
 }
 
 /* Message de chargement et erreur */
@@ -45,8 +32,7 @@ h1 {
   width: 100%;
   max-width: 900px; /* Limiter la largeur des articles */
   justify-content: center;
-  align-items: center; /* Centrer les articles horizontalement */
-  padding-bottom: 50px; /* Ajouter un peu de marge au bas */
+  align-items: center;
 }
 
 /* Carte d'un article */
@@ -59,9 +45,6 @@ h1 {
   color: #ddd; /* Texte gris clair pour les cartes */
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 800px; /* Limiter la largeur de chaque carte d'article */
-  margin-bottom: 20px; /* Espacement entre les cartes */
-  display: flex;
 }
 
 /* Effet au survol d'un article */
@@ -73,12 +56,11 @@ h1 {
 /* Contenu de l'article */
 .article-content {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   gap: 20px; /* Espacement entre l'image et le texte */
 }
 
-/* Texte de l'article */
 .article-text {
   flex: 1; /* Le texte prend le reste de l'espace disponible */
 }
