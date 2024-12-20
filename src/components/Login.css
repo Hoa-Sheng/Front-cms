@@ -1,0 +1,50 @@
+.container-fluid {
+    background: #1C1C1C;
+}
+
+.row {
+    justify-content: center;
+}
+
+.col {
+    padding: 1rem;
+}
+
+.shadow {
+    background-color: #333333;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+
+h2 {
+    color: #0097A7;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-control {
+    border-color: #0097A7;
+    background-color: #FFFFFF;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #0097A7;
+    border: none;
+    color: #FFFFFF;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.text-center p {
+    color: #757575;
+}
+
+.text-center a {
+    color: #0097A7;
+    text-decoration: none;
+}

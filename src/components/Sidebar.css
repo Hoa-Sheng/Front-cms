@@ -9,7 +9,7 @@
   }
   
   .sidebar h2 {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
   }
   
   .sidebar ul {
@@ -22,29 +22,29 @@
     cursor: pointer;
   }
   
-  button {
-    background-color: #0097A7;
+  .sidebar button {
+    background-color: #0097A7 !important;
     color: white;
-    font-size: 1rem;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 10px;
+    font-size: 1rem !important;
+    padding: 12px 24px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease, transform 0.2s ease !important;
+    margin-bottom: 20px !important; 
   }
   
-  button:hover {
+  .sidebar button:hover {
     background-color: #007C8B;
     transform: translateY(-2px);
   }
   
-  button:active {
+  .sidebar button:active {
     background-color: #006C7A;
     transform: translateY(1px);
   }
   
-  button:focus {
+  .sidebar button:focus {
     outline: none;
   }
   

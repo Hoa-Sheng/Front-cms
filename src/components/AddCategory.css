@@ -1,0 +1,50 @@
+.container-fluid {
+    background: #1C1C1C;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.row {
+    justify-content: center;
+}
+
+.col {
+    padding: 1rem;
+}
+
+.shadow-lg {
+    background-color: #333333;
+    padding: 2rem;
+    border-radius: 5px !important;
+}
+
+h2 {
+    color: #0097A7;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-control {
+    border-color: #0097A7;
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 1rem 1.5rem;
+    border-radius: 5px !important;
+}
+
+.btn-primary {
+    background-color: #0097A7;
+    border: none;
+    color: #FFFFFF;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px !important;
+    font-weight: bold;
+}
+
+.form-label {
+    color: #FFFFFF;
+    font-weight: 600;
+}
