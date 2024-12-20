@@ -1,103 +1,95 @@
-/* Feedi.css */
-
-/* Contexte général */
 .feedi-container {
-  background-color: #1C1C1C; /* Fond sombre */
-  color: #fff; /* Texte en blanc */
+  background-color: #1C1C1C;
+  color: #fff;
   font-family: Arial, sans-serif;
-  min-height: 100vh; /* Hauteur minimale de la page (100% de la hauteur de la fenêtre) */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrer horizontalement les articles */
-  justify-content: flex-start; /* Aligner les articles vers le haut */
+  align-items: center;
+  justify-content: flex-start;
   padding: 20px;
   position: relative;
+  width: 100%;
+  margin-left: 30px;
 }
 
-/* Garder le fond qui couvre toute la page, même lors du scroll */
 body {
   margin: 0;
   padding: 0;
-  background-color: #1C1C1C; /* Couleur de fond continuelle */
-  min-height: 100vh; /* La page occupe toute la hauteur même avec scroll */
+  background-color: #1C1C1C;
+  min-height: 100vh;
   color: white;
   font-family: Arial, sans-serif;
 }
 
-/* Titre */
 h1 {
   color: #fff;
   font-size: 2rem;
   margin-bottom: 20px;
-  text-align: center; /* Centrer le titre */
+  text-align: center;
 }
 
-/* Message de chargement et erreur */
 .loading-message, .error-message {
-  color: #ff5722; /* Couleur orange pour le message */
+  color: #0097A7;
 }
 
-/* Liste des articles */
 .articles-list {
   display: flex;
-  flex-direction: column; /* Les articles s'affichent de haut en bas */
-  gap: 30px; /* Espacement entre chaque article */
+  flex-direction: column;
+  gap: 30px;
   width: 100%;
-  max-width: 900px; /* Limiter la largeur des articles */
+  max-width: 900px;
   justify-content: center;
-  align-items: center; /* Centrer les articles horizontalement */
-  padding-bottom: 50px; /* Ajouter un peu de marge au bas */
+  align-items: flex-end;
+  padding-bottom: 50px;
 }
 
-/* Carte d'un article */
 .article-card {
-  background-color: #333; /* Fond gris foncé pour les cartes */
+  background-color: #333;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   text-align: left;
-  color: #ddd; /* Texte gris clair pour les cartes */
+  color: #ddd;
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 800px; /* Limiter la largeur de chaque carte d'article */
-  margin-bottom: 20px; /* Espacement entre les cartes */
+  max-width: 800px;
+  margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
 }
 
-/* Effet au survol d'un article */
 .article-card:hover {
-  background-color: #444; /* Plus foncé au survol */
+  background-color: #444;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* Contenu de l'article */
 .article-content {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px; /* Espacement entre l'image et le texte */
+  gap: 20px;
 }
 
-/* Texte de l'article */
 .article-text {
-  flex: 1; /* Le texte prend le reste de l'espace disponible */
+  flex: 1;
 }
 
 .article-text h2 {
-  color: #ffcc00; /* Jaune pour le titre */
+  color: #0097A7;
   font-size: 1.6rem;
   margin-bottom: 10px;
 }
 
 .article-text p {
-  color: #ccc; /* Texte en gris clair */
+  color: #ccc;
   line-height: 1.5;
   font-size: 1rem;
 }
 
 .author-date {
   font-size: 0.9rem;
-  color: #bbb; /* Couleur légèrement grise pour l'auteur et la date */
+  color: #bbb;
   margin-top: 10px;
 }
 
@@ -107,9 +99,8 @@ h1 {
   color: #aaa;
 }
 
-/* Image de l'article */
 .article-image-container {
-  width: 200px; /* Taille de l'image (ajustez selon vos besoins) */
+  width: 200px;
   height: auto;
 }
 
@@ -117,5 +108,12 @@ h1 {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  object-fit: cover; /* Garder les proportions sans déformer l'image */
+  object-fit: cover;
+}
+
+
+@media screen and (max-width: 440px){
+  .article-content{
+    flex-direction: column;
+  }
 }

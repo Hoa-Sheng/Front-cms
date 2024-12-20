@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Feed.css'; // Assurez-vous que vous avez ce fichier CSS pour les styles
+import './Feed.css'; // Assurez-vous d'importer les styles CSS
 
 const Feedi = () => {
   const [articles, setArticles] = useState([]);
@@ -43,15 +43,8 @@ const Feedi = () => {
 
   return (
     <div className="feedi-container">
-      <h1>Liste des Articles</h1>
-
-      {/* Message de chargement */}
       {loading && <p className="loading-message">Chargement...</p>}
-
-      {/* Message d'erreur */}
       {error && <p className="error-message">Erreur: {error}</p>}
-
-      {/* Affichage des articles */}
       {!loading && !error && articles.length > 0 && (
         <div className="articles-list">
           {articles.map(article => (

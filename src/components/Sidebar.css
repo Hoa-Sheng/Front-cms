@@ -1,14 +1,15 @@
 /* Sidebar.css */
 .sidebar {
     flex: 0.2;
-    padding: 10px;
+    padding: 20px 40px;
     border-right: 1px solid #595959;
     border-top: 1px solid #595959;  
-    background-color: #333333; /* Noir graphite */
+    background-color: #333333; 
+    text-align: center;
   }
   
   .sidebar h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .sidebar ul {
@@ -21,3 +22,34 @@
     cursor: pointer;
   }
   
+  button {
+    background-color: #0097A7;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: #007C8B;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background-color: #006C7A;
+    transform: translateY(1px);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+@media screen and (max-width: 640px){
+  .sidebar{
+    display: none;
+  }
+}

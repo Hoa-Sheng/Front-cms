@@ -1,10 +1,77 @@
 /* Header.css */
 .header {
-    background-color: #333333; /* Noir de jais */
-    color: white;
-    padding: 10px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: 1px solid #595959;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.menu-icon {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: white;
+  margin-right: 10px;
+  z-index: 9999;
+  position: relative;
+}
+
+.menu-icon:hover {
+  color: #0097A7;
+}
+
+@media screen and (max-width: 640px) {
+  .menu-icon {
+    display: block;
   }
-  
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #333;
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 9998;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-menu button {
+  background-color: #0097A7;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #007C8B;
+}

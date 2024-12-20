@@ -5,11 +5,10 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <h2>Menu</h2>
-      <ul>
-        <li>Tendances</li>
-        <li>Communautés</li>
-        <li>Messages</li>
-      </ul>
+
+      <button>Categories</button>
+      <button>Creer un article</button>
+      <button>Creer une catégorie</button>
     </div>
   );
 }
