@@ -3,7 +3,7 @@ import { AuthContext } from "../context/AuthContext";
 import "./Feed.css";
 
 const Feedi = () => {
-  const { user } = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,7 +18,6 @@ const Feedi = () => {
       const data = await response.json();
       if (data && Array.isArray(data.articles)) {
         setArticles(data.articles);
-        // Fetch comments for each article
         data.articles.forEach(article => fetchComments(article.ID_article_Articles));
       } else {
         throw new Error("Format des données incorrect");
@@ -32,7 +31,7 @@ const Feedi = () => {
   }
 
   const handleAddComment = async (articleId, comment) => {
-    if (!user) {
+    if (!isAuthenticated) {
       alert("Vous devez être connecté pour ajouter un commentaire.");
       return;
     }
@@ -53,7 +52,7 @@ const Feedi = () => {
       const newComment = await response.json();
       setComments((prev) => ({
         ...prev,
-        [articleId]: [...(prev[articleId] || []), newComment],
+        [articleId]: [...(prev[articleId] || []), newComment.comment],
       }));
     } catch (error) {
       console.error("Erreur lors de l'ajout du commentaire:", error.message);
@@ -115,7 +114,7 @@ const Feedi = () => {
                     <li key={index}>{comment.text}</li>
                   ))}
                 </ul>
-                {user && (
+                {isAuthenticated && (
                   <div className="add-comment">
                     <input
                       type="text"
@@ -129,7 +128,7 @@ const Feedi = () => {
                     />
                   </div>
                 )}
-                {!user && <p>Vous devez être connecté pour commenter.</p>}
+                {!isAuthenticated && <p>Vous devez être connecté pour commenter.</p>}
               </div>
             </div>
           ))}

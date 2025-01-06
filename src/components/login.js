@@ -1,14 +1,17 @@
+// src/components/login.js
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, Alert } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
+import { useAuth } from '../context/AuthContext';
 
-const Login = ({ onLogin }) => {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,7 +29,7 @@ const Login = ({ onLogin }) => {
             }
 
             const data = await response.json();
-            onLogin(); // Appeler la fonction onLogin passée en prop
+            login(); // Met à jour l'état d'authentification
             navigate('/'); // Redirige vers la page principale
         } catch (error) {
             setError(error.message || 'Erreur lors de la connexion');

@@ -12,9 +12,9 @@ const AddCategory = ({ onSubmit }) => {
 
         // Créer un objet FormData pour envoyer les données du formulaire et la photo
         const formData = new FormData();
-        formData.append('Nom_Categories', nom);
-        formData.append('Description_Categories', description);
-        formData.append('Photo_Categorie', photo);
+        formData.append('name', nom); // Update field name to 'name'
+        formData.append('description', description); // Update field name to 'description'
+        formData.append('photo', photo); // Update field name to 'photo'
 
         try {
             // Remplacez l'URL par celle de votre backend
@@ -27,59 +27,51 @@ const AddCategory = ({ onSubmit }) => {
                 // Traitez la réponse du backend ici, par exemple, afficher un message de succès
                 onSubmit();
             } else {
-                // Gérer l'erreur si la requête échoue
-                console.error('Erreur lors de l\'ajout de la catégorie');
+                // Traitez les erreurs ici
+                console.error('Erreur lors de la création de la catégorie');
             }
         } catch (error) {
-            console.error('Erreur réseau:', error);
+            console.error('Erreur lors de la création de la catégorie:', error);
         }
     };
 
-    const handlePhotoChange = (e) => {
-        setPhoto(e.target.files[0]);
-    };
-
     return (
-        <Container fluid>
-            <Row className="justify-content-center">
-                <Col md={8} lg={6} className="p-4">
-                    <h2 className="text-center mb-4">Ajouter une Catégorie</h2>
+        <Container>
+            <Row>
+                <Col>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-4">
-                            <Form.Label>Nom de la Catégorie</Form.Label>
+                        <Form.Group controlId="formNom">
+                            <Form.Label>Nom</Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder="Entrez le nom de la catégorie"
                                 value={nom}
                                 onChange={(e) => setNom(e.target.value)}
                                 required
                             />
                         </Form.Group>
-                        <Form.Group className="mb-4">
-                            <Form.Label>Description de la Catégorie</Form.Label>
+
+                        <Form.Group controlId="formDescription">
+                            <Form.Label>Description</Form.Label>
                             <Form.Control
                                 as="textarea"
-                                rows={4}
-                                placeholder="Entrez la description de la catégorie"
+                                rows={3}
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 required
                             />
                         </Form.Group>
-                        <Form.Group className="mb-4">
-                            <Form.Label>Photo de la Catégorie</Form.Label>
+
+                        <Form.Group controlId="formPhoto">
+                            <Form.Label>Photo</Form.Label>
                             <Form.Control
                                 type="file"
-                                onChange={handlePhotoChange}
+                                onChange={(e) => setPhoto(e.target.files[0])}
                                 required
                             />
                         </Form.Group>
-                        <Button
-                            variant="primary"
-                            type="submit"
-                            className="w-100 py-3 fw-bold"
-                        >
-                            Ajouter
+
+                        <Button variant="primary" type="submit">
+                            Ajouter la catégorie
                         </Button>
                     </Form>
                 </Col>
